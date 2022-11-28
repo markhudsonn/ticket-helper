@@ -1,0 +1,1870 @@
+
+
+<!DOCTYPE html>
+<html dir="LTR" lang="en-GB" class="no-js">
+<head><meta name="viewport" content="width=device-width,maximum-scale=1.0" /><title>
+	Leeds United FC: Tickets, Hospitality &amp; Membership
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />    
+    <meta charset="utf-8" />
+    
+    <base href="https://tickets.leedsunited.com/" />
+    
+<script type="text/javascript" id="debugInfo">
+
+</script>
+
+        <meta name="keywords" content="Hot Tickets" />
+
+
+<meta property="og:title" content="Leeds United FC: Tickets, Hospitality &amp; Membership" />
+<meta property="og:locale" content="en_GB" /> 
+<meta property="og:url" content="https://tickets.leedsunited.com/" />
+
+
+
+
+<noscript>
+    <style type="text/css">
+        BODY *{
+            display:none;
+        }
+        BODY IFRAME{
+            display:block;
+        }
+    </style>
+    
+</noscript>
+
+<script type="text/javascript">
+    document.cookie="os=true";
+    var gResources = new Array();
+    gResources['plsWait'] = "Please wait…";
+    
+    var $app={
+        baseURI:"//tickets.leedsunited.com/"
+    };
+    
+        var $eSRO={
+            decimalSeparator: '.',
+        decimalPlaces:2,
+        thousandsSeparator:',',
+        defaultCurrencySign:'£',
+        positiveCurrencyPattern:'‪{1}‬{0}',
+        negativeCurrencyPattern:'-‪{1}‬{0}',
+        culture:'en-GB',
+        sitePath:'/',
+        siteBasePath:'/',
+        isRTL: false,
+        currentScreen : 'recommendedevents.aspx',
+        isClientLogedIn : true,
+        clientIsAccount : false,
+        oboAccount : null,
+        renderedPositionType: 'linear',
+        isMobile: false,
+        getAntiCsrfToken: function(){return $.cookies.get("af");},
+        currentInterface: '1',
+        interfaceData: null,
+        hasBasket: true,
+		documentWidthIsBelowThreshold: false, // value is being calculated below
+		deviceWidthIsBelowThreshold: false, // value is being calculated below
+		isLandscapeTabletAsDesktop: false, // value is being calculated below
+		isTouchDevice: false, // value is being calculated below
+		inOldMobileOS: /Android 1|Android 2|Android 3/i.test(navigator.userAgent),
+		orderPage: "Order.aspx",
+		loginOrSignupPage: "LoginOrRegisterDlg.aspx", 
+		//currentTheme: "",
+		hasClient: true,
+        client: {"id":"38476c13-6baf-4b49-899e-029752b69967","name":"Mr Mark Hudson","email":"markhudsonn4@gmail.com"},
+        timeFormat: { 
+            pattern: 'HH:mm',
+            am: 'AM',
+            pm: 'PM'
+        },
+        inIframe: window.self !== window.top,
+        disableAccessiblity: false,
+        disableResponsiveness: false,
+        req:(function(){
+            var requirejs, callbacks=[];
+            function req(){
+                var args = Array.prototype.slice.call(arguments),
+                    f= function(){requirejs.apply(undefined, args)}
+                if (requirejs){f();}else{callbacks.push(f);}
+            }
+            req.init = function(req){
+                if (requirejs){ return; }
+                requirejs = req;
+                for (var i=0; i<callbacks.length; i++){
+                    callbacks[i]();
+                }
+            }
+            return req;
+        })(),
+        util:{
+            urlIsAbsolute:(function(regex){
+                return function(url){
+                    return url.match(regex);
+                }
+            })(/^(http(s)?:)?\/\//)
+        }
+    };
+    
+    var require ={
+        baseUrl: $eSRO.siteBasePath,
+        paths: {
+            "angular": "//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min",
+            "angular-resource": "//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min",
+            "angular-route": "//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min",
+            "angular-i18n": "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/i18n/angular-locale_"+$eSRO.culture.toLowerCase(),
+            'qtip-shim': [
+                '//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min',
+                'js/lib/qtip2-2.2.1/jquery.qtip.min'
+            ],
+            'modernizr-shim': [
+                '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min',
+                'js/lib/modernizr'
+            ],
+            'facebook': '//connect.facebook.net/' + $eSRO.culture.replace("-","_") + '/all'
+        },
+        shim: {
+            'angular': { exports: 'angular' },
+            'angular-resource': ['angular'],
+            'angular-route': ['angular'],
+            'angular-i18n': ['angular'],
+            'modernizr-shim': {exports: 'Modernizr'},
+            'facebook': { exports: 'FB'}
+        },
+        priority: [
+		    "angular"
+        ],
+        res: {
+            culture: $eSRO.culture
+        },
+        map: {
+            '*': {
+                'css': 'js/lib/require-css/css'
+            }
+        },
+        callback:function(){
+            define("jquery", [], function() {
+                return jQuery;
+            });
+            define("jquery-ui", [], function() {
+                return jQuery;
+            });
+            define("global", [], function(){
+                return window;
+            });
+            
+            var enableMinification=true;
+            var urlRegex = new RegExp("^(" + $eSRO.siteBasePath.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&") + ")?((?:.*\\/)*)(.*?)(\\.min|-min)?(\\.js)(.*)$", "i");
+            var load = require.load;
+            require.load = function (context, moduleId, url) {
+                if (!$eSRO.util.urlIsAbsolute(url)){
+                    var res = urlRegex.exec(url);
+                    if (res!=null){
+                        for(var i=2;i<res.length-1;i++){
+                            if (res[i]){
+                                res[i]=res[i].toLowerCase();
+                            }
+                        }
+                        if (enableMinification && res[2].substr(0,3)=="js/" && res[4]===undefined){
+                            res[4]=".min";
+                        }
+                        url = res.splice(1).join("");
+                    }
+                }
+                return load(context, moduleId, url);
+            };
+            $eSRO.req.init(require);
+        },
+        urlArgs: function(id, url) {
+            if ($eSRO.util.urlIsAbsolute(url)) return "";
+            var pre="res/"+$eSRO.culture+"/";
+            if (id.substr(0, pre.length)==pre) id=id.substr(pre.length);
+            var map = $eSRO.scriptVersionMap
+                path = id.split("/");
+            for(var i=0; i<path.length-1; i++){
+                map = map.d[path[i]];
+                if (!map) break;
+            }
+            var hash,f, rfl=path[path.length-1].toLowerCase();
+            if(map && map.f){
+                for(f in map.f){
+                    if (f.toLowerCase()==rfl){
+                        hash = map.f[f];
+                        break;
+                    }
+                }
+            };
+            return hash ? ((url.indexOf('?') === -1 ? '?' : '&') + "_=" + hash) : "";
+        }
+    };
+    
+    if (!this.JSON) {
+        document.write('<script type="text/javascript" src="/js/lib/json2.min.js"><\/script>');
+    }
+</script>
+<script type="text/javascript">
+function applyCustomStyle(){
+console.log("style js has loaded");
+$(document).ready(function() {
+  require(["./UserContent/customstyle.js"]);
+});
+
+}
+</script>
+<link rel="stylesheet" type="text/css" class="external" href="//fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700" />
+<link rel="stylesheet" type="text/css" class="external" href="//fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800" />
+<link rel="stylesheet" type="text/css" class="external" href="//fonts.googleapis.com/css2?family=Oswald" />
+<link rel="stylesheet" type="text/css" class="interfaceStyle group-Other" href="res/1/interface-common.css.min.css?_=7217649516811" />
+<link rel="stylesheet" type="text/css" class="interfaceStyle group-Template" href="res/1/TemplateFull.css.min.css?_=7228016861454" />
+<link rel="stylesheet" type="text/css" class="interfaceStyle group-Screen" href="res/1/RecommendedEvents.aspx.css.min.css?_=7217649896283" />
+<link rel="stylesheet" type="text/css" class="interfaceStyle group-Other" href="res/1/interface-common2.css.min.css?_=7217649524033" />
+<link rel="stylesheet" type="text/css" class="interfaceStyle group-Template" href="res/1/TemplateFull2.css.min.css?_=7225364954139" />
+<script type="text/javascript">
+function applyThemeStyle(){require(['style/flowtheatre.css/common.js','style/flowtheatre.css/MainMenu.ascx.js']);}
+</script>
+
+<script type="text/javascript" id="jquery"
+    src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<!--
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.0.0.js"></script>
+-->
+<script type="text/javascript" id="jquery-ui"
+    src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+</script>
+<script type="text/javascript" id="jquery-ui-datepicker-local"
+    src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/i18n/jquery-ui-i18n.min.js">
+</script>
+<script type="text/javascript" src="/res/js-versionMap.js?_=IbD9m_Kk47LS"></script>
+<script  type="text/javascript"
+    src="/js/baseref.min.js?_=ftnQZrYM">
+</script>
+
+<link rel="shortcut icon" href="usercontent/Leeds.css/images/favicon.ico?v=2" />
+<script  type="text/javascript">
+
+    //if (!(typeof(skipCookieTest) != "undefined" && skipCookieTest==true) && typeof($.cookies) != "undefined" && !$.cookies.test()) {
+    if (testCookies()===false){
+        //console.log('navigating to configureBrowser.aspx');
+        //console.log('ConfigureBrowser.aspx?UID=');
+        window.location.replace('ConfigureBrowser.aspx');
+    }
+
+    $.cookies.setOptions({secure:true});
+
+(function(){
+    var cacheStateCookies=undefined;
+    var cookieName = "cs";
+    if (cacheStateCookies!=undefined && cacheStateCookies.current==$.cookies.get(cookieName)){
+        $.cookies.set(cookieName, cacheStateCookies["new"]);
+    }
+})();
+
+    	
+$eSRO.documentWidthIsBelowThreshold = (function() { 
+    return calcIsDocumentWidthIsBelowThreshold();
+})();
+		
+$eSRO.deviceWidthIsBelowThreshold = (function() { 
+    return calcIsDeviceWidthIsBelowThreshold();
+})();
+		
+$eSRO.isLandscapeTabletAsDesktop = (function() { 
+    return calcIsLandscapeTabletAsDesktop();
+})();
+
+$eSRO.isTouchDevice = (function() { 
+    return calcIsTouchDevice();
+})();
+
+(function($){//restore pre-v3 offset functionality because of qtip
+    var oldOffset = $.fn.offset;
+
+    $.fn.offset = function() {
+        var docElem,
+            elem = this[ 0 ],
+            origin = { top: 0, left: 0 };
+
+        if ( !elem || !elem.nodeType ) {
+            return origin;
+        }
+
+        docElem = ( elem.ownerDocument || window.document ).documentElement;
+        if ( !$.contains( docElem, elem ) ) {
+            return origin;
+        }
+
+        return oldOffset.apply( this, arguments );
+    };
+})(jQuery);
+</script>
+<script  type="text/javascript">
+    define("qtip2", ['require','qtip-shim','css!qtip-shim'], function(require,qtip) {
+        return qtip;
+    });
+    define("modernizr", ['require', 'modernizr-shim'], function(require, modernizr){//augmenting the version on CDN instead of using a custom build
+        modernizr.prefixedCSS = function(prop) {
+            var prefixedProp = modernizr.prefixed(prop);
+            return prefixedProp && domToCSS(prefixedProp);
+        }
+        function domToCSS(name) {
+            return name.replace(/([A-Z])/g, function(str, m1) {
+                return '-' + m1.toLowerCase();
+            }).replace(/^ms-/, '-ms-');
+        }
+        modernizr.addTest('cssgridlegacy', modernizr.testAllProps('gridColumns', '10px', true));
+        modernizr.addTest('cssgrid', modernizr.testAllProps('gridTemplateRows', 'none', true));
+        return modernizr;
+    });
+</script>
+
+<script type="text/javascript" src="style/style.js"></script>
+<script type="text/javascript">
+    
+    $eSRO.api.bind("afterCall", function(data, xhr){
+        xhr.fail(function(xhr){
+            if (xhr.responseJSON && xhr.responseJSON.faultCode=="TransactionWasTakenOverByAnotherUser"){
+                document.location.href = $eSRO.sitePath + "TransactionTakenOver.aspx";
+            }
+        });
+    });
+</script>
+
+<script src="js/productSocialLinks.js"></script>
+    
+    <script type="text/javascript">
+        (function () {
+            var postMsgObjOk = true;
+            try {
+                window.postMessage({
+                    toString: function () {
+                        postMsgObjOk = false;
+                    }
+                }, "*");
+            } catch (e) { }
+
+            function PostIframeHeight(eventName) {
+                var height = (document.scrollingElement || document.documentElement).scrollHeight;
+
+                var data = { "EventName": eventName, "CalculatedHeight": height, "DocumentHeight": height, "MaxHeight": height, "MinHeight": height, "screen": $eSRO.currentScreen };
+                if (!postMsgObjOk) {
+                    data = JSON.stringify(data);
+                }
+                window.parent.postMessage(data, "*");
+            }
+
+            function inIframe() {
+                try {
+                    var tempInIframe = window.self !== window.top;
+                    $('body').toggleClass('inIframe', tempInIframe);
+
+                    return tempInIframe;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            $(window).on("resize load domchanged.esro", function (ev) {
+                if (inIframe()) {
+                    PostIframeHeight(ev.type);
+                }
+            }).on("dialogopen", function (ev) {
+                if (inIframe()) {
+                    window.parent.postMessage({ "EventName": ev.type, "screen": $eSRO.currentScreen }, "*");
+                }
+            });
+        })();
+    </script>
+</head>
+<body class="body_css interface-1 dir-LTR screen-RecommendedEvents_aspx screen-recommendedevents_aspx template-TemplateFull template-templatefull has-client client-is-logged-in">
+    <noscript><iframe style="height:100%;width:100%" frameborder="0" src="ConfigureBrowser.aspx"></iframe></noscript><div class="screenPartContainer ph_headerbackground-fixed" id="PH_HeaderBackground-fixed">
+	<DIV style='width:100%;height:100%;' ></DIV>
+</div><div id="group_Header-fixed" role="region" aria-label="Top header"><div class="screenPartContainer ph_menuback" id="PH_MenuBack">
+	<A style='width:100%;height:100%;' href="javascript:window.history.back()" class="backbutton onlymobile"><i class="fa fa-angle-left"></i></A>
+</div><div class="screenPartContainer ph_logo" id="PH_logo">
+	
+<a class="logo-container" href="./" aria-label="Logo. Press ENTER to go to the Home page"></a>
+
+</div><div class="screenPartContainer ph_main_menu" id="PH_Main_Menu" role="navigation" aria-label="Secondary menu">
+	
+<div id="navMenu_Top" class="Main navMenu main_menu_background">
+    <div class="main_menu_header userGreeting">
+        Hello Mark
+    </div>
+    
+    <ul id="navMenu_Top_nav" class="nav navMenu-List">
+        
+                <li id="navMenu_Top_Tickets"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_Tickets" >
+                    
+<a class="Tickets navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Top_Tickets_item"
+    >
+    <span>
+        Tickets
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HomeGames" href="en-gb/categories/home-games" id="navMenu_Top_HomeGames_item"
+    >
+    <span>
+        Home Games
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Ballots" href="Ballots" id="navMenu_Top_Ballots_item"
+    >
+    <span>
+        Home Game Ballots
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="AwayGames" href="en-gb/categories/away-games" id="navMenu_Top_AwayGames_item"
+    >
+    <span>
+        Away Games
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Travel" href="en-gb/categories/travel" id="navMenu_Top_Travel_item"
+    >
+    <span>
+        Travel
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="StadiumTours" href="usercontent/calendar.aspx?showid=c99700d6-7568-4bca-aac5-0014446bd882" id="navMenu_Top_StadiumTours_item"
+    >
+    <span>
+        Stadium Tours
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Park&amp;Ride" href="en-gb/categories/park-and-ride" id="navMenu_Top_Park&amp;Ride_item"
+    >
+    <span>
+        Park & Ride
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+                <li id="navMenu_Top_AllMembership"
+                    class="navMenu-FirstLevelItem  navmenu_AllMembership" >
+                    
+<a class="AllMembership navMenu-Heading navMenu-FirstLevelItem" href="memberships" id="navMenu_Top_AllMembership_item"
+    >
+    <span>
+        Memberships
+    </span>
+</a>
+                    
+                </li>
+            
+                <li id="navMenu_Top_Subscriptions"
+                    class="navMenu-FirstLevelItem  navmenu_Subscriptions" >
+                    
+<a class="Subscriptions navMenu-Heading navMenu-FirstLevelItem" href="subscriptions" id="navMenu_Top_Subscriptions_item"
+    >
+    <span>
+        Subscriptions
+    </span>
+</a>
+                    
+                </li>
+            
+                <li id="navMenu_Top_Hospitality"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_Hospitality" >
+                    
+<a class="Hospitality navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Top_Hospitality_item"
+    >
+    <span>
+        Hospitality
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HospitalityEvents" href="hospitality" id="navMenu_Top_HospitalityEvents_item"
+    >
+    <span>
+        Hospitality
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HospSTs" href="/subscriptionrenew.aspx" id="navMenu_Top_HospSTs_item"
+    >
+    <span>
+        Hospitality Renewals
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+                <li id="navMenu_Top_ClubEvents"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_ClubEvents" >
+                    
+<a class="ClubEvents navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Top_ClubEvents_item"
+    >
+    <span>
+        Club Events
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="World_Cup_Events" href="/en-gb/categories/World-Cup-Events" id="navMenu_Top_World_Cup_Events_item"
+    >
+    <span>
+        Club Events
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Xmas" href="en-gb/categories/Christmas-parties" id="navMenu_Top_Xmas_item"
+    >
+    <span>
+        Christmas Parties
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+                <li id="navMenu_Top_Foundation"
+                    class="navMenu-FirstLevelItem  navmenu_Foundation" >
+                    
+<a class="Foundation navMenu-Heading navMenu-FirstLevelItem" href="/en-GB/categories/lu-foundation" id="navMenu_Top_Foundation_item"
+    >
+    <span>
+        Football Courses
+    </span>
+</a>
+                    
+                </li>
+            
+                <li id="navMenu_Top_FAQs"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_FAQs" >
+                    
+<a class="FAQs navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Top_FAQs_item"
+    >
+    <span>
+        FAQs
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="MobTickets" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/MobileTickets.html" id="navMenu_Top_MobTickets_item"
+    >
+    <span>
+        Mobile Tickets
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="STInfo" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/SeasonTicketInfo.html" id="navMenu_Top_STInfo_item"
+    >
+    <span>
+        Season Ticket Information
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="STGuide" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/SupporterGuide.html" id="navMenu_Top_STGuide_item"
+    >
+    <span>
+        Supporter Guide
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HospGuide" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/HospitalityGuide.html" id="navMenu_Top_HospGuide_item"
+    >
+    <span>
+        Hospitality Guide
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Touting" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/TicketTouting.html" id="navMenu_Top_Touting_item"
+    >
+    <span>
+        Ticket Touting
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+    </ul>
+</div>
+<script type="text/javascript">
+(function() {
+    var container = $("script:last").prev(".navMenu");
+    require(['js/menu'], function(menu) {
+        menu.init(container);
+    });
+})();
+</script>
+
+</div><div class="screenPartContainer ph_searchpage_bycategories" id="PH_SearchPage_ByCategories" role="search" aria-label="Search by genres">
+	
+<script type="text/javascript">
+    $(function() {
+
+        var genresControl = $("#ctl00_spw604_ctl00_genres");
+        var genresContainer = $('.genresContainer', genresControl);
+        var extraGenres = $('.genre.extra:not(.selected)', genresContainer);
+        if (extraGenres.length == 0) {
+            $(".genresFooter").hide();
+            return;
+        }
+        var expandedHeight = genresContainer.height();
+        var animspeed = 500; // animation speed in milliseconds
+        extraGenres.hide();
+        var collapsedHeight = genresContainer.height();
+        var more = $(".more", genresControl);
+        var close = $(".close", genresControl).hide();
+
+        more.on('click', function(e) {
+            genresContainer.animate({ 'height': expandedHeight }, animspeed);
+            extraGenres.fadeIn(animspeed);
+            close.show();
+            close.focus();
+            more.hide();
+        });
+        close.on('click', function(e) {
+            genresContainer.animate({ 'height': collapsedHeight }, animspeed);
+            extraGenres.fadeOut(animspeed);
+            close.hide();
+            more.show();
+            more.focus();
+        });
+    });
+</script>
+<div id="ctl00_spw604_ctl00_genres" class="genres">
+    <h2>Search by Category</h2>
+    <div class="genresContainer">
+        
+                <a href="https://tickets.leedsunited.com/en-GB/categories/home-games" id="ctl00_spw604_ctl00_genresRepeater_ctl00_genreEntry" class="genre" aria-label="Search in genre Home-Games ">Home-Games</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/away-games" id="ctl00_spw604_ctl00_genresRepeater_ctl01_genreEntry" class="genre" aria-label="Search in genre Away-Games ">Away-Games</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/travel" id="ctl00_spw604_ctl00_genresRepeater_ctl02_genreEntry" class="genre" aria-label="Search in genre Travel ">Travel</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/stadium-tours" id="ctl00_spw604_ctl00_genresRepeater_ctl03_genreEntry" class="genre" aria-label="Search in genre Stadium-Tours ">Stadium-Tours</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/park-and-ride" id="ctl00_spw604_ctl00_genresRepeater_ctl04_genreEntry" class="genre" aria-label="Search in genre Park-And-Ride ">Park-And-Ride</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/events" id="ctl00_spw604_ctl00_genresRepeater_ctl05_genreEntry" class="genre" aria-label="Search in genre Events ">Events</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/soccer-schools" id="ctl00_spw604_ctl00_genresRepeater_ctl06_genreEntry" class="genre extra" aria-label="Search in genre Soccer-Schools ">Soccer-Schools</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/skills-centres" id="ctl00_spw604_ctl00_genresRepeater_ctl07_genreEntry" class="genre extra" aria-label="Search in genre Skills-Centres ">Skills-Centres</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/disability-camps" id="ctl00_spw604_ctl00_genresRepeater_ctl08_genreEntry" class="genre extra" aria-label="Search in genre Disability-Camps ">Disability-Camps</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/women-girls" id="ctl00_spw604_ctl00_genresRepeater_ctl09_genreEntry" class="genre extra" aria-label="Search in genre Women-Girls ">Women-Girls</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/foundation/2" id="ctl00_spw604_ctl00_genresRepeater_ctl10_genreEntry" class="genre extra" aria-label="Search in genre Foundation ">Foundation</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/lu-foundation" id="ctl00_spw604_ctl00_genresRepeater_ctl11_genreEntry" class="genre extra" aria-label="Search in genre LU-Foundation ">LU-Foundation</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/walking-football" id="ctl00_spw604_ctl00_genresRepeater_ctl12_genreEntry" class="genre extra" aria-label="Search in genre Walking-Football ">Walking-Football</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/working-out-together" id="ctl00_spw604_ctl00_genresRepeater_ctl13_genreEntry" class="genre extra" aria-label="Search in genre Working-Out-Together ">Working-Out-Together</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/christmas-parties" id="ctl00_spw604_ctl00_genresRepeater_ctl14_genreEntry" class="genre extra" aria-label="Search in genre Christmas-Parties ">Christmas-Parties</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/matchday-hospitality" id="ctl00_spw604_ctl00_genresRepeater_ctl15_genreEntry" class="genre extra" aria-label="Search in genre Matchday-Hospitality ">Matchday-Hospitality</a>
+            
+                <a href="https://tickets.leedsunited.com/en-GB/categories/world-cup-events" id="ctl00_spw604_ctl00_genresRepeater_ctl16_genreEntry" class="genre extra" aria-label="Search in genre World-Cup-Events ">World-Cup-Events</a>
+            
+    </div>
+    <div class="genresFooter"><button class="more" aria-label="More Types">More</button><button class="close">Close</button></div>
+</div>
+
+
+</div><div class="screenPartContainer ph_searchpage_bycalendar" id="PH_SearchPage_ByCalendar" role="search" aria-label="Search by date">
+	
+<script type="text/javascript">
+    require(["js/eventsCalendar"], function(calendar) {
+        calendar.init(
+            $("#ctl00_spw605_ctl00_calendarCtrl"), 
+            '2022-11-28', 
+            {"2022":{"11":{"29":1},"12":{"2":2,"9":2,"15":2,"16":4,"19":2,"22":1,"28":2}},"2023":{"1":{"3":1,"4":3,"6":1,"9":2,"10":2,"12":1,"21":1}}},
+            3,
+            {
+                "changeYear":true,
+                "changeMonth":true,
+                "minDate":0
+                //,"maxDate":"+m"
+            },
+            false
+        );
+    });
+</script>
+<div id="ctl00_spw605_ctl00_calendarCtrl" class="eventsCalendar">
+</div>
+</div><div class="screenPartContainer ph_searchpage_bycurrenttimerangeevents" id="PH_SearchPage_ByCurrentTimeRangeEvents" role="search" aria-label="Find all events on {0}">
+	<div id="ctl00_spw612_ctl00_currentTimeRangeEventsCtrl" class="currentTimeRangeEventsCtrl">
+    <a class="currentTimeRangeEvents" href="AllEvents.aspx?ViewType=Monthly" aria-label="Find all events on November 2022">Find all events on November 2022</a>
+</div>
+<script type="text/javascript">
+(function(){
+	var container = $("script:last").prev();
+	container.parent('.screenPartContainer').attr('aria-label', $('a.currentTimeRangeEvents', container).attr('aria-label'));
+})();
+</script>
+
+</div><div class="screenPartContainer ph_float_menu" id="PH_Float_Menu" role="navigation" aria-label="Main menu">
+	
+
+<div id="siteMenuBar" class="float_menu_background hasclient logged-in">
+    <div class="siteMenuContainer">
+    
+<a class="flm_Leeds_United_Website float_menu_item" href="https://www.leedsunited.com" id="navMenu_Float_Leeds_United_Website_item"
+    >
+    <span>
+        www.leedsunited.com
+    </span>
+</a>
+<button type="button" class="flm_login float_menu_item" onclick="javascript:login()" id="navMenu_Float_login_item" >
+
+        <span class="mnuBtnCaption">
+        Sign In
+        </span>
+</button>
+
+<script type="text/javascript" language="javascript">
+    var rsrcErrorMessage = "An error has occurred, please try again later...";
+    var showJustLoggedIn = false;
+    var loginWidget = new (function() {
+        var container;
+        var showOptions;
+        var hideTimerHandle;
+        var hideTimeout = 100;
+        var suppressHiding = false, mouseIsOver;
+
+        function hideWidget() {
+            if (suppressHiding) {
+                return;
+            }
+            hideTimerHandle = window.setTimeout(function() {
+                container.hide(showOptions);
+            }, hideTimeout);
+            
+        }
+
+        function showWidget() {
+            if (hideTimerHandle)
+                window.clearTimeout(hideTimerHandle);
+            container.show(showOptions);
+        }
+        if (showJustLoggedIn){
+            require(['qtip2', 'js/res!js/loginwidget.res.js'], function(qtip, res) {
+                var content = $('<div><div class="service"></div><div class="text">{0}</div><button>{1}</button></div>'.format(
+                    res.Captions.eSRO_JustLoggedInMessage.format($(".greetingFirst").text()), res.Captions.OK1));
+                $("#customerBox").qtip({
+                    content: { 
+                        text: content,
+                        button: true},
+                    style: { 
+                        classes: "justLoggedIn"
+                    },
+                    events: {
+                        show: function(event, api) {
+                            window.setTimeout(function(){ api.hide();}, 5000);
+                        },
+                        render: function(event, api) {
+                            $('button', api.elements.content).click(function(e) {
+                                api.hide(e);
+                            });
+                        },
+                        hide: function(event, api) { api.destroy(); }
+                    },
+                    position:{
+                        my: $eSRO.isRTL ? 'top left' : 'top right',
+                        at: $eSRO.isRTL ? 'bottom right' : 'bottom left',
+                        target: $("#customerBox")
+                    }
+                }).qtip('api').show();
+            });
+        }
+        $(document).ready(function() {
+            $eSRO.req(['js/jquery-additions'], function () {
+                $("#siteMenuBar .flm_myAccount").css("display", 'inline-block');
+                //TODO: move the above line elsewhere
+                $(window).resize(ResizeMenu).resize();
+                
+                container = $("#signInBox").
+                    mouseenter(function() {
+                        if (!$eSRO.documentWidthIsBelowThreshold && !$eSRO.isLandscapeTabletAsDesktop) {
+                            mouseIsOver = true;
+                            showWidget();
+                        }
+                    }).
+                    mouseleave(function() {
+                        if (!$eSRO.documentWidthIsBelowThreshold && !$eSRO.isLandscapeTabletAsDesktop) {
+                            mouseIsOver = false;
+                            hideWidget();
+                        }
+                    }).
+                    on('click' ,function() {
+                        if ( mouseIsOver==undefined || mouseIsOver == false){
+                            mouseIsOver = true;
+                            showWidget();
+                        }
+                        else {
+                            mouseIsOver = false;
+                            hideWidget();
+                        };
+                    }).
+                    find("#divLoginWidget");
+                
+                showOptions = $(container).customProperties("get", "show-options");
+
+                $("button.logout", "#customerBox").on("click",function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    logout();
+                });
+
+                $("input, a", container)
+                    .focus(function(e) {
+                        if (!$(e.target).is(":visible")) return;
+                        showWidget();
+                        suppressHiding = true;
+                    })
+                    .on('click',function() {
+                        showWidget();
+                        suppressHiding = true;
+                    })
+                    .blur(function() {
+                        suppressHiding = false;
+                        if (!mouseIsOver)
+                            hideWidget();
+                    });
+            });
+        });
+
+        function ResizeMenu() {
+            left = ($(window).width() / 2) - 480;
+
+            //Handle low res
+            if (left < 210)
+                left = 210;
+            $("body.dir-LTR .siteMenuContainer").css("left", left);
+            $("body.dir-RTL .siteMenuContainer").css("right", left);
+        }
+
+        function logoutCallback(response) {
+            var result = null;
+            try {
+                result = response();
+            }
+            catch (ex) {
+                if (ex.type != "SessionClosedException") {
+                    showPopupMessage(ex.message);
+                    return;
+                }
+            }
+            //on mobile and when logging-out from crmdetails page, redirecting to default
+            if ($eSRO.documentWidthIsBelowThreshold || $eSRO.currentScreen == "crmdetails.aspx")
+                location.replace(".");//default page
+            else
+                location.replace(location.href);
+        }
+
+        function logout() {
+            $eSRO.api.call('CrmController.LogoutClient', undefined, undefined, logoutCallback);
+        }
+        function updateGreeting(){
+            $eSRO.api.call('CrmController.GetLoggedInCustomerFullDialogName', undefined, undefined, function(response){
+                var result = null;
+                try {
+                    result = response();
+                }
+                catch (ex) {
+                    return;
+                }
+                $(".greeting").text(result);
+            });
+        }
+        this.show = showWidget; 
+        this.hide = hideWidget; 
+        this.logout = logout;
+        this.updateGreeting = updateGreeting;
+    });
+</script>
+<span id="customerBox" class="loggedinclientbox" role="application">
+    <a href="CrmDetails.aspx" class="float_menu_item">
+        <span class="greeting">Mr Mark  Hudson</span>
+        <span class="greetingFirst">Mark</span>
+        
+        <span class="crmId">946967</span>
+        
+    </a>
+    
+    <button type="button" class="float_menu_item hoverable logout">Logout</button>
+    <span class="loyaltyPoints clientPoints"><span class="loyaltyPointsNumber">0.00</span>
+        <a href="javascript:void(0)" aria-label="You have an On Account Balance of 0.00. Go to the On Account page.">Cashback</a>
+      </span>
+    
+</span>
+
+<button type="button" class="flm_Join float_menu_item" onclick="javascript:register()" id="navMenu_Float_Join_item" >
+
+        <span class="mnuBtnCaption">
+        Register
+        </span>
+</button>
+<script type="text/javascript">
+var rsrcItemsInBasket = 'Items in basket';
+var rsrcBasketIsEmpty = 'Basket is empty';
+</script>
+<script type="text/javascript">
+    (function() {
+        function setMenuElementProperties(menuElement, href, tooltip) {
+            menuElement.attr({ 'title': tooltip, 'href': href });
+        }
+        function clearMe() {
+            var menuElement = $(".flm_my_basket");
+            menuElement.find('.basketQtyHolder').remove();
+            setMenuElementProperties(menuElement, "javascript:void(0)", rsrcBasketIsEmpty);
+        }
+        $(document).bind("basketCommitted.esro", function(ev) {
+            clearMe();
+        });
+        $(document).bind("basketUpdated.esro", function(ev, hasItems) {
+
+
+            if (hasItems == true || typeof hasItems == 'undefined') {
+                $eSRO.api.call("TransactionController.CountBasketSaleItems", {}, undefined, function(response) {
+
+                    if (response == null)
+                        return;
+                    var result = null;
+                    try {
+                        result = response();
+                        var menuElement = $(".flm_my_basket");
+                        if (result == 0) {
+                            clearMe();
+                        }
+                        else {
+                            var entry = menuElement.find('.basketQtyHolder');
+                            if (entry.length == 1) {
+                                entry.html(result);
+                            }
+                            else {
+                                if (typeof result != 'undefined') {
+                                    menuElement.find('span').append("<span class='basketQtyHolder'>{0}</span>".format(result));
+                                }
+                            }
+                          
+                            setMenuElementProperties(menuElement, $eSRO.sitePath + $eSRO.orderPage, result + " " + rsrcItemsInBasket);
+                        }
+                    }
+                    catch (ex) {
+                        $debug.log('failed get basket count: {0}'.format(ex.message));
+                    }
+
+                });
+            }
+            else {
+                clearMe();
+            }
+        });
+    } ());
+    
+</script>
+
+<a class="flm_my_basket float_menu_item active" href="javascript:void(0)" id="my_basket" 
+    title="1 Items in basket">
+    <span>
+        My Basket<span class='basketQtyHolder'>1</span>
+        
+    </span>
+</a>
+<div class="flm_CountDown float_menu_item" id="CountDown">
+    
+<div id="ctl00$spw601$ctl00$navMenu_Float_CountDown_item$Timer_timerMessage" class="timerMessage">
+    <div class="CountDownRemainingTimeTitle"></div>
+    <!--Button to cancel the whole transaction-->
+    <div  class="CountDownRemainingTimeTitle">
+        <button class="CancelTransFromTimer btnCancel btnLink" onclick="cancelTransaction()">
+            <span>Remove all items</span>
+        </button>
+    </div>
+    <div class="graphicCountdownHolder" aria-hidden="true">
+        <span class="timerText" aria-hidden="true"></span>
+        <div class="graphicCountdown">&nbsp;</div>
+    </div>
+</div>
+<script type="text/javascript">
+(function(){
+    var container = $(".timerMessage:last")
+    require(["js/timeCountDown"], function(timeCountDown){
+        timeCountDown.init(
+            container,
+            1800,
+            1800,
+            true,
+            30
+        );
+    });
+})();
+</script>
+</div>
+    </div>
+</div>
+</div></div><div id="group_Header" role="banner" aria-label="Main header"><div class="screenPartContainer ph_menubutton" id="PH_MenuButton">
+	<button style='width:100%;height:100%;' class="menu_btn onlymobile" ></button>
+</div><div class="screenPartContainer ph_largelogo" id="PH_LargeLogo">
+	
+<a class="logo-container" href="./" aria-label="Logo. Press ENTER to go to the Home page"></a>
+
+</div><div class="screenPartContainer ph_adplaceholder" id="PH_AdPlaceHolder">
+	<DIV style='width:100%;height:100%;' ></DIV>
+</div><div class="screenPartContainer ph_menu" id="PH_Menu" role="navigation" aria-label="Main menu">
+	
+<div id="navMenu_Main" class="Main navMenu main_menu_background">
+    <div class="main_menu_header userGreeting">
+        Hello Mark
+    </div>
+    
+    <ul id="navMenu_Main_nav" class="nav navMenu-List">
+        
+                <li id="navMenu_Main_Tickets"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_Tickets" >
+                    
+<a class="Tickets navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Main_Tickets_item"
+    >
+    <span>
+        Tickets
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HomeGames" href="en-gb/categories/home-games" id="navMenu_Main_HomeGames_item"
+    >
+    <span>
+        Home Games
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Ballots" href="Ballots" id="navMenu_Main_Ballots_item"
+    >
+    <span>
+        Home Game Ballots
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="AwayGames" href="en-gb/categories/away-games" id="navMenu_Main_AwayGames_item"
+    >
+    <span>
+        Away Games
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Travel" href="en-gb/categories/travel" id="navMenu_Main_Travel_item"
+    >
+    <span>
+        Travel
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="StadiumTours" href="usercontent/calendar.aspx?showid=c99700d6-7568-4bca-aac5-0014446bd882" id="navMenu_Main_StadiumTours_item"
+    >
+    <span>
+        Stadium Tours
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Park&amp;Ride" href="en-gb/categories/park-and-ride" id="navMenu_Main_Park&amp;Ride_item"
+    >
+    <span>
+        Park & Ride
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+                <li id="navMenu_Main_AllMembership"
+                    class="navMenu-FirstLevelItem  navmenu_AllMembership" >
+                    
+<a class="AllMembership navMenu-Heading navMenu-FirstLevelItem" href="memberships" id="navMenu_Main_AllMembership_item"
+    >
+    <span>
+        Memberships
+    </span>
+</a>
+                    
+                </li>
+            
+                <li id="navMenu_Main_Subscriptions"
+                    class="navMenu-FirstLevelItem  navmenu_Subscriptions" >
+                    
+<a class="Subscriptions navMenu-Heading navMenu-FirstLevelItem" href="subscriptions" id="navMenu_Main_Subscriptions_item"
+    >
+    <span>
+        Subscriptions
+    </span>
+</a>
+                    
+                </li>
+            
+                <li id="navMenu_Main_Hospitality"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_Hospitality" >
+                    
+<a class="Hospitality navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Main_Hospitality_item"
+    >
+    <span>
+        Hospitality
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HospitalityEvents" href="hospitality" id="navMenu_Main_HospitalityEvents_item"
+    >
+    <span>
+        Hospitality
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HospSTs" href="/subscriptionrenew.aspx" id="navMenu_Main_HospSTs_item"
+    >
+    <span>
+        Hospitality Renewals
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+                <li id="navMenu_Main_ClubEvents"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_ClubEvents" >
+                    
+<a class="ClubEvents navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Main_ClubEvents_item"
+    >
+    <span>
+        Club Events
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="World_Cup_Events" href="/en-gb/categories/World-Cup-Events" id="navMenu_Main_World_Cup_Events_item"
+    >
+    <span>
+        Club Events
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Xmas" href="en-gb/categories/Christmas-parties" id="navMenu_Main_Xmas_item"
+    >
+    <span>
+        Christmas Parties
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+                <li id="navMenu_Main_Foundation"
+                    class="navMenu-FirstLevelItem  navmenu_Foundation" >
+                    
+<a class="Foundation navMenu-Heading navMenu-FirstLevelItem" href="/en-GB/categories/lu-foundation" id="navMenu_Main_Foundation_item"
+    >
+    <span>
+        Football Courses
+    </span>
+</a>
+                    
+                </li>
+            
+                <li id="navMenu_Main_FAQs"
+                    class="navMenu-FirstLevelItem subMenuClose navmenu_FAQs" >
+                    
+<a class="FAQs navMenu-Heading navMenu-FirstLevelItem" href="javascript:void(0)" id="navMenu_Main_FAQs_item"
+    >
+    <span>
+        FAQs
+    </span>
+</a>
+                    
+                            <ul class="navMenu-SubList">
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="MobTickets" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/MobileTickets.html" id="navMenu_Main_MobTickets_item"
+    >
+    <span>
+        Mobile Tickets
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="STInfo" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/SeasonTicketInfo.html" id="navMenu_Main_STInfo_item"
+    >
+    <span>
+        Season Ticket Information
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="STGuide" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/SupporterGuide.html" id="navMenu_Main_STGuide_item"
+    >
+    <span>
+        Supporter Guide
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="HospGuide" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/HospitalityGuide.html" id="navMenu_Main_HospGuide_item"
+    >
+    <span>
+        Hospitality Guide
+    </span>
+</a>
+                                </li>
+                        
+                                <li class="navMenu-Item">
+                                    
+<a class="Touting" href="/screenloader.aspx?type=include&amp;page=usercontent/documents/html/TicketTouting.html" id="navMenu_Main_Touting_item"
+    >
+    <span>
+        Ticket Touting
+    </span>
+</a>
+                                </li>
+                        
+                            </ul>
+                        
+                </li>
+            
+    </ul>
+</div>
+<script type="text/javascript">
+(function() {
+    var container = $("script:last").prev(".navMenu");
+    require(['js/menu'], function(menu) {
+        menu.init(container);
+    });
+})();
+</script>
+
+</div></div><div class="screenPartContainer ph_headerbackground" id="PH_HeaderBackground">
+	<DIV style='width:100%;height:100%;' ></DIV>
+</div><div class="screenPartContainer ph_htmlpergenre" id="PH_HtmlPerGenre">
+	
+
+	<div id="genrehtml"></div>
+	<script type="text/javascript">
+		function loadPage(href)
+		{
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", href, false);
+			xmlhttp.send();
+			return xmlhttp.responseText;
+		}
+		var folders = window.location.pathname;
+		var lastSegment = folders.split('/').pop();
+		if ($.isNumeric(lastSegment)){ 
+			var folders = folders.split("/").slice(0, -1).join("/");
+			var lastSegment = folders.split('/').pop();
+		}
+		if (lastSegment == "" || lastSegment == "default.aspx") 
+		{
+
+			pathToLoad = location.protocol + '//' + window.location.host + '/usercontent/documents' + $eSRO.siteBasePath + 'html/default.aspx.html';
+            $.ajax({
+            url:pathToLoad,
+            type:'HEAD',
+            success: function()
+            {
+                $('#genrehtml').append($('<div id="genrehtmlhome">' + loadPage(pathToLoad) + '</div>'));
+            }
+            });
+
+		}
+		else if ((folders.indexOf("/categories/") !== -1) || ($eSRO.currentScreen=="donationslist.aspx") || ($eSRO.currentScreen=="membershipslist.aspx") || ($eSRO.currentScreen=="subscriptionlist.aspx") || ($eSRO.currentScreen=="hospitalityevents.aspx") || ($eSRO.currentScreen=="giftvoucherslist.aspx") || ($eSRO.currentScreen=="customerreservedseats.aspx") || ($eSRO.currentScreen=="subscriptionrenew.aspx"))
+		{
+            
+            pathToLoad = location.protocol + '//' + window.location.host + '/usercontent/documents' + $eSRO.siteBasePath + 'html/' + lastSegment + '.html';
+            $.ajax({
+            url:pathToLoad,
+            type:'HEAD',
+            error: function()
+            {
+                $('#genrehtml').append($('<div id="genrehtml"><div class="content-wrapper"><div class="content"></div></div></div>'));
+            },
+            success: function()
+            {
+				$('#genrehtml').append($('<div id="genrehtml' + lastSegment + '">' + loadPage(pathToLoad) + '</div>'));
+            }
+            });
+            
+		}
+		else if (lastSegment == "calendar.aspx") 
+		{
+
+			pathToLoad = location.protocol + '//' + window.location.host + '/usercontent/documents' + $eSRO.siteBasePath + 'html/calendar.html';
+            $('#genrehtml').append($('<div id="genrehtmlcal">' + loadPage(pathToLoad) + '</div>'));
+
+		}
+		else if (lastSegment == "LinkCustomer.aspx") 
+		{
+
+			pathToLoad = location.protocol + '//' + window.location.host + '/usercontent/documents' + $eSRO.siteBasePath + 'html/linkcustomer.html';
+            $.ajax({
+            url:pathToLoad,
+            type:'HEAD',
+            success: function()
+            {
+                $('#genrehtml').append($('<div id="genrehtml' + lastSegment + '">' + loadPage(pathToLoad) + '</div>'));
+            }
+            });
+
+		}
+	</script>
+
+		
+
+</div><div class="screenPartContainer screen-content ph_recommended_events" id="PH_Recommended_Events">
+	
+<div id="eventsList">
+    
+<script type="text/javascript" src="js/products.js"></script>
+<script type="text/javascript">
+    var rsrcBtnClose = "Close";
+    var shouldBlockAllItemClick = true;
+    
+    require(['js/itemsList', 'js/itemsListUtils'], function(undefinedlist, utils){
+         utils.init('.dataItem .description:not(:has(.previewFull))', 100);
+        
+        $(function(){
+        createItemsList($("#ctl00_body_EventsListControl"), false);
+        });
+    });
+    
+</script>
+
+        <div class="itemsList" id="ctl00_body_EventsListControl">
+            <div id="ctl00_body_EventsListControl_ItemsListControl_ctl00_sortingContainer" class="sortingContainer"></div>
+    
+        </div>
+        <div id="ctl00_body_EventsListControl_ItemsListControl_ctl01_pagingContainer" class="pagingContainer"></div>
+        
+    
+
+    <div class='no_events_message'>Events not found</div>
+</div>
+
+</div><div class="screenPartContainer ph_basketwidget" id="PH_BasketWidget" role="region" aria-label="Basket pane">
+	
+<script type="text/javascript">
+    $(document).bind("basketCommitted.esro", function(ev) {
+        $("#miniBasketFooter").hide();
+    });
+</script>
+<div>
+    <h2>
+        Personal Basket
+    </h2>
+    <div id="miniBasketWrapper">
+    
+<script type="text/javascript">
+    var rsrcBtnClose = "Close";
+    var rsrcBtnOk = "OK";
+    require(['js/products','js/singleProduct','js/validation']);
+</script>
+<a href="Order.aspx" class="editBasket" aria-label="Edit basket"><span>Edit</span></a>
+<div class="basket-container">
+
+<!-- product items -->
+
+<div class="basket-section ticketsBasketSection" role="region" aria-label="Tickets">
+    
+            <div class="basketEvent">
+            <div class="eventInfoContainer">
+                
+<div class="eventInfoSection infoSection">
+    <div class="imageContainer" role="link" tabindex="0" onclick="javascript:location.assign($eSRO.siteBasePath + 'en-GB/shows/leeds%20united%20vs%20real%20sociedad/events');" aria-label="Press ENTER to open the &#39;Leeds United Vs Real Sociedad&#39; page" title="More Info"  >
+    
+        <img src="//leedsunited.seatgeekenterprise.com/weblink/10119/get.resource/images/1033/1000001.jpg?etag=6C992AA953C5B5601A3FFB34E04415F2" alt="Leeds United Vs Real Sociedad" aria-label="The selected event is Leeds United Vs Real Sociedad at Friday 16 December 2022 19:45 in Elland Road. Press ENTER to select another event"/>
+        
+    </div>
+	<div class="eventDetails" tabindex="0">
+		<div class="name" role="link" tabindex="0" onclick="javascript:location.assign($eSRO.siteBasePath + 'en-GB/shows/leeds%20united%20vs%20real%20sociedad/events');" aria-label="Press ENTER to open the &#39;Leeds United Vs Real Sociedad&#39; page" title="More Info"    role="heading" aria-level="3">Leeds United Vs Real Sociedad</div>
+		<div class="date">16/12/2022 19:45</div>
+		<div class="location">Elland Road</div>
+		<div class="extra"></div>
+	</div>
+    
+<div class="socialLinks">
+    
+</div>
+
+    
+    <div class="clear"></div>
+</div>
+
+            </div>
+            <div id="ctl00_spw599_ctl00_basketCtrl_ctl00_EventsRepeater_ctl00_Summary" class="basketItemSummary" tabindex="0"><span class='count'>1 Tickets</span><span class='priceTypes'>Adult</span><br /><span class='details'>(Area L30, row XX, seat 55)</span><span class='basketProperty PriceToPay'>‪£‬21.00</span></div>
+            <div class="basketArea">
+                
+                
+            </div>
+            </div>
+        
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- payments -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="EndOfBasketItemsPlaceHolders"></div>
+
+
+
+
+
+<div class="basketTotals">
+    <div class="summaryLine" tabindex="0" data-totalcost="21">
+        <span>Total (1 items):</span>
+        <span class="totalCost">‪£‬21.00</span>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript">
+
+(function(){
+    var container = $('.basket-container:last');
+    require(['js/basket'], function(basket){
+        basket.init(
+             container,
+             {},
+             null,
+             {},
+             {
+                d: false,
+                r: true,
+                ns: true,
+                sp: 'None',
+                sps: false,
+                isAccordionBasket : true,
+                accordionInitState : 'ExpandAll',
+                grouping: 'AllExceptSigned',
+                cib: false
+             }
+        )
+    });
+})();
+</script>
+    </div>
+    <div class="footer" id="miniBasketFooter">
+        
+<div  class="button small_button_a proceed" data-origClass="button small_button_a proceed"
+       data-disabledClass="disabled">
+    <a href="Order.aspx" onclick=""
+        data-clickEvent="Order.aspx" data-clientClickEvent="" 
+        id="ctl00$spw599$ctl00_btnProceed"    tabindex="0">
+        To Basket</a></div>
+
+    </div>
+</div>
+</div><div class="screenPartContainer ph_scrolltop" id="PH_ScrollTop" role="region" aria-label="Scroll to top">
+	
+
+ <script type="text/javascript">
+     if ($eSRO.documentWidthIsBelowThreshold) {
+         require(["js/ScrollTop"], function(module) {
+             module.init();
+         });
+     }
+ </script>
+
+
+
+</div><div id="group_Footer" role="region" aria-label="Footer"><div class="screenPartContainer ph_customfooter" id="PH_CustomFooter">
+	<footer class="footer">
+   
+    <div id="footer-contact-wrapper" class="footer-row">
+        <div class="footer-col" style="float:none !important;">
+            <span class="footer-logo small">
+                <a class="foot-logo" href="https://www.sbotop.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/sbotop_web_logo_v2.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.adidas.co.uk" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/adidas_web_v2.png" style="display: inline;">
+                </a>
+            </span>
+            <span class="footer-logo small">
+                <a class="foot-logo" href="https://www.wish.com/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/wish.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.astonishcleaners.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/astonish.png" style="display: inline;">
+                </a>
+            </span>
+            <!--<span class="footer-logo small" style="border-bottom: 1px solid #3b5997;">-->
+            <span class="footer-logo small">
+                <a class="foot-logo" href="https://www.boostdrinks.com/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/boost_website_v3.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://hisense.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/hisense_web_logo.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.socios.com/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" lt="" src="/usercontent/documents/images/footer/socios.png" style="display: inline;">
+                </a>
+            </span>     
+            <span class="footer-logo small">
+                <a class="foot-logo" href="https://www.amtauto.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/amt_logo.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.bet365.com" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/bet365_web.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.cadbury.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/cadbury_logo.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.ea.com/sports" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/ea_sports_web.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.heineken.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/heineken.png" style="display: inline;">
+                </a>
+                <a class="foot-logo" href="https://www.vitality.co.uk/" target="_blank" rel="nofollow">
+                    <img class="sponsor-image-new lazy" alt="" src="/usercontent/documents/images/footer/vitality_web_card_v2.png" style="display: inline;">
+                </a>
+            </span>
+        </div>
+        <!--<div class="footer-col">
+        </div>-->
+    </div>
+
+	<!--
+    <div id="footer-contact-wrapper" class="footer-row">
+        <div class="footer-col">
+            <span class="footer-logo"><img src="/usercontent/Leeds.css/images/logos/logo.svg"></span>
+            <div class="footer-content">
+                <p>
+                    <b>Leeds United Football Club</b><br />
+                    Elland Road<br />
+                    Leeds<br />
+                    LS11 0ES
+                </p>
+
+            </div>
+            <div class="footer-content">
+                <p>
+                    <b>Contact Us</b><br />
+                    <a href="mailto:tickets@leedsunited.com">tickets@leedsunited.com</a><br />
+                    <a href="tel:03713341992">+0371 334 1992</a> (Match Tickets, Memberships and Stadium Tours)<br />
+                    <a href="tel:03303331521">0330 333 1521</a> (Ticket Office Customer Services, enquiries only, no bookings)
+                </p>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div id="footer-social-wrapper" class="footer-row">
+		<ul>
+			<li><a href="https://www.facebook.com/LeedsUnited" target="_blank" class="social-icon facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/lufc" target="_blank" class="social-icon twitter">Twitter</a></li>
+            <li><a href="https://www.instagram.com/leedsunited" target="_blank" class="social-icon instagram">Instagram</a></li>
+		</ul>
+	</div>
+   
+	<div id="footer-copyright-wrapper" class="footer-row">
+        <span>&copy; 2022 Leeds United Football Club</span>				
+		<ul>
+			<li><a href="https://onelink.to/x43dz4">Download the Official App</a></li>		
+			<li><a href="https://dc6vmiz8c91pk.cloudfront.net/media/150/33936064952236/booklet.pdf">Accessibility</a></li>		    
+			<li><a href="https://www.leedsunited.com/privacy-notice">Privacy Policy</a></li>
+			<li><a href="https://www.leedsunited.com/cookie-policy">Cookie Policy</a></li>
+            <li><a href="https://www.leedsunited.com/terms-and-conditions">Terms of Use</a></li>
+            <li><a href="/screenloader.aspx?type=include&page=usercontent/documents/html/ContactUs.html">Contact Us</a></li>
+            <li><a href="/screenloader.aspx?type=include&page=usercontent/documents/html/lufc-terms.html">Terms & Conditions of Sale</a></li>
+		</ul>
+        <div id="powered-by-seatgeek">Powered by <a class="powered-by-seatgeek" href="https://enterprise.seatgeek.com/uk" target="_blank">SeatGeek</a></div>
+	</div>
+	
+</footer>
+</div><div class="screenPartContainer ph_social_tools_bar" id="PH_Social_tools_bar" role="region" aria-label="Social media toolbar">
+	
+<script type="text/javascript">
+$(window).on("load", function(){
+    require.config({paths:{"share-addthis":"//s7.addthis.com/js/250/addthis_widget.js#username=xa-4d36b7ae34675cb4"}}); require(["share-addthis"]);
+});
+</script>
+<div class="socialTools-container">
+
+    <div class="addthis_toolbox addthis_default_style addthis_24x24_white_style">
+        <a href="//www.addthis.com/bookmark.php?v=250&amp;amp;username=xa-4d36b7ae34675cb4" class="addthis_button_compact">
+            Share
+        </a>
+        
+        <span class="addthis_separator">|</span>
+            
+        <a class="addthis_button_preferred_1"></a>
+        
+        <a class="addthis_button_preferred_2"></a>
+        
+        <a class="addthis_button_preferred_3"></a>
+        
+        <a class="addthis_button_preferred_4"></a>
+        
+    </div>
+
+</div>
+</div></div><div class="screenPartContainer ph_footer" id="PH_Footer">
+	
+<script type="text/javascript">
+    function setFooterInRightPos() {
+
+        var lowestPoint = 0;
+        var footer = $("#footer");
+        var footerScreenPartContainer = $(".screenPartContainer").has(footer);
+        $(".screenPartContainer").not(footerScreenPartContainer).each(
+            function() {
+                var screenPartContainer = $(this);
+                var point = screenPartContainer.position().top + screenPartContainer.height();
+                if (point > lowestPoint)
+                    lowestPoint = point;
+            }
+        );
+
+        footerScreenPartContainer.css("top", lowestPoint);
+        footer.show();
+        
+    }
+
+    $(document).ready(function() {
+        var footer = $("#footer");
+        setFooterInRightPos();
+        $(this).trigger("FooterReady.esro", footer.find(".inner"));
+        if ($(".inner *:visible", footer).length > 0) {
+            footer.addClass("hasContent");
+        } else {
+            footer.removeClass("hasContent");
+        }
+    })
+</script>
+<div id="footer" style="display:none">
+    <!-- footer start -->
+    <div class="inner"></div>
+    <!-- footer end -->
+</div>
+
+</div><div class="screenPartContainer ph_google_analytics" id="PH_Google_Analytics">
+	
+<script type="text/javascript">
+
+var isTransactionConfirmed = false;
+var isAnalytics = true;
+var isTagManager = false;
+var transactionNumber = "";
+var transactionTotalPrice = "";
+console.log("Checking google universal analytics");
+if(isTransactionConfirmed)
+{
+	var analyticsItems = undefined;
+	transactionNumber = '';
+	transactionTotalPrice =  '0';
+}
+    
+if (isAnalytics)
+{
+	console.log("Firing google universal analytics");
+	
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-230301116-1', 'auto', {'allowLinker': true});  
+	ga('send', 'pageview');
+	
+	if(isTransactionConfirmed)
+	{
+		ga('require', 'ecommerce');
+		
+		console.log("Firing Ecommerce google universal analytics");
+		 
+		ga('ecommerce:addTransaction', {
+			'id': '',       // Transaction ID. Required
+			'affiliation': 'LUFC Ticketing',   	// Affiliation or store name
+			'revenue': '0',         // Grand Total
+			'shipping': '0',     	// Shipping
+			'tax': '0'                   // Tax
+		});
+					 
+	
+	   // add item might be called for every item in the shopping cart
+	   // where your ecommerce engine loops through each item in the cart and
+	   // prints out _addItem for each
+		for(var i=0 ; i < analyticsItems.length; i ++)
+		{
+			// addItem should be called for every item in the shopping cart.
+			ga('ecommerce:addItem', {
+				'id': '',  			// Transaction ID. Required
+				'name': analyticsItems[i].ProductName,      // Product name. Required
+				'sku': analyticsItems[i].SKUCode,           // SKU/code
+				'category': analyticsItems[i].CategoryName, // Category or variation
+				'price': analyticsItems[i].UnitPrice,       // Unit price
+				'quantity': analyticsItems[i].Quantity      // Quantity
+			});
+		}
+		
+		ga('ecommerce:send');
+	}
+}
+else if (isTagManager)
+{
+    console.log("Google Tag Manager identified");
+    if (isTransactionConfirmed){
+        console.log("Firing Ecommerce Google Tag Manager");
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'transactionId':transactionNumber,
+            'transactionAffiliation':'LUFC Ticketing',
+            'transactionTotal':0,
+            'transactionShipping':0,
+            'transactionTax': 0,
+            'transactionProducts': undefined
+            });
+    }
+    
+    
+}
+else
+{
+    console.log("Google universal analytics is missconfigured. Reverting to external provider mode");
+}
+</script>
+</div>
+</body>
+</html>

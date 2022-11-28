@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Queue-it</title>
+    <!-- Icons -->
+    <link rel="icon" href="/media/w4qfugpa/queue-it-icon.png?width=32&amp;height=32" sizes="32x32" />
+    <link rel="icon" href="/media/w4qfugpa/queue-it-icon.png?width=192&amp;height=192" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/media/w4qfugpa/queue-it-icon.png?width=180&amp;height=180" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <meta name="application-name" content="Virtual Online Queuing System | Queue-it" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/media/w4qfugpa/queue-it-icon.png?width=192&amp;height=192" />
+    <meta name="description" content="Queue-it What-is-this">
+    <!-- jQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script src="/scripts/creole.js"></script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5HDMHLM');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- Bootstrap js -->
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/bootstrap.min.js"></script>
+
+    <!-- Custom style -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f6f6f6;
+        }
+
+        .navbar {
+            height: 4.5rem;
+        }
+
+        .lang-selectores-container {
+            z-index: 99;
+            position: relative;
+            top: 73px;
+        }
+
+            .lang-selectores-container .position-absolute {
+                left: 0;
+                right: 0;
+                padding: inherit;
+            }
+
+        .lang-switch {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /*.back-to-main-container {
+            position: absolute;
+            top: 76px;
+            margin: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9;
+            display: none;
+        }*/
+
+        .back-to-main {
+            cursor: pointer;
+            display: none;
+        }
+
+            .lang-switch,
+            .back-to-main.btn {
+                padding: 10px 0;
+            }
+
+        .row-container.row-height-large.wit-second-page {
+            min-height: calc(65vh - 4.5rem);
+            display: flex;
+        }
+
+        #main-page-one {
+            display: block;
+        }
+
+        #main-page-two {
+            display: none;
+        }
+
+        .navbar-brand img {
+            width: 160px;
+        }
+
+        .lang-switch-icon-open::after {
+            content: "▼";
+            margin-left: 10px;
+        }
+
+        .lang-switch-icon-close::after {
+            content: "▲" !important;
+            margin-left: 10px;
+        }
+
+        .control-container {
+            margin-bottom: 2rem;
+        }
+
+        .cc {
+            min-height: calc(100vh - 72px);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .c1 {
+            border: 1px solid #fff;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://queue-it.com/media/2sdhp2rw/why-you-are-in-a-line.jpg);
+            background-position: center center, right center;
+        }
+
+        .c2 {
+            border: 1px solid #fff;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://queue-it.com/media/tqrdympt/want-to-use-queue-it-for-your-business.jpg);
+            background-position: center center, right bottom;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-brand img {
+                width: 200px;
+            }
+
+            .c1 {
+                background-position: right center;
+            }
+
+            .c2 {
+                background-position: right bottom;
+            }
+        }
+
+        .wit-ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .wit-ul li {
+                margin-bottom: 15px;
+            }
+
+        /*a {
+            color: #3daf2c;
+            text-decoration: none;
+        }*/
+
+        a:active, a:visited {
+            outline: none;
+        }
+
+        #support-section, #technical-support {
+            <!-- text-align: center; -->
+            font-size: 16px;
+        }
+
+            #support-section, #technical-support.cookies-enabled {
+                margin-bottom: 0;
+            }
+
+                #technical-support.cookies-enabled #support-disabled {
+                    display: none;
+                }
+
+            #technical-support .support-link {
+                color: #6e826c;
+                text-decoration: none;
+                pointer-events: none;
+            }
+
+            #technical-support.cookies-enabled .support-link {
+                color: #19BE81;
+                pointer-events: auto;
+            }
+
+        .listspan {
+            font-size: 20px;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .lang-btn {
+            text-align: left;
+        }
+
+        .lang-buttons-hidden {
+            display: none;
+        }
+
+        .padding-top-150 {
+            padding-top: 150px;
+        }
+
+        .main-page-two-color {
+            background-color: #f6f6f6;
+        }
+
+        .start-video img {
+            max-height: 400px;
+        }
+        .btn{
+            min-width: auto;
+        }
+    </style>
+
+    <!-- Custom Data, Custom JS -->
+    <script src="/scripts/wit-lang.js"></script>
+    <script>
+
+        //function setCookie(cname, cvalue, exdays) {
+        //    var d = new Date();
+        //    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        //    var expires = "expires=" + d.toUTCString();
+        //    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        //}
+
+        //function hideNoticeAndEnableSupport() {
+        //    var cookieNotice = document.getElementById('cookie-notice');
+        //    cookieNotice.style.display = 'none';
+        //    //console.log('*********');
+        //    var supportLink = document.getElementById("technical-support");
+        //    supportLink.classList.add("cookies-enabled");
+        //}
+
+        $(document).ready(function () {
+
+            var language = "en-US"; // set default language
+
+            // Coped from old whatisthis
+            getQuerystring = function (key) {
+                key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+
+                //var qs = regex.exec("queue-it.com/what-is-this.html?customerId=taalqueueit&eventId=fastfurious9&queueId=c3e28405-69fd-4486-a069-9c1557a4774f&language=ar-qa");
+                var qs = regex.exec(window.location.href);
+
+                if (qs === null)
+                    return undefined;
+                else
+                    //console.log(qs[1]);
+                    return qs[1];
+            };
+
+            var cdn = "https://assets.queue-it.net/"; // Prod environment
+            var customerId = getQuerystring('customerId') || getQuerystring('c');
+            var eventId = getQuerystring('e') || getQuerystring('eventId');
+            var queueId = getQuerystring('q') || getQuerystring('queueId');
+            var previewflag = getQuerystring('preview');
+            var hostUrl = getQuerystring('hostUrl');
+            language = (getQuerystring('language') ? getQuerystring('language') : "en-US");
+            var page = getQuerystring('page');
+            var zendeskUrl = "https://support.queue-it.com/hc/en-us?customerId=" + customerId + "&eventId=" + eventId + "&queueId=" + queueId;
+
+            setBackToQueueBtn();
+            function setBackToQueueBtn() {
+                var url = "";
+                var referrerUrl = document.referrer // Url with parameters
+                var referreDomainName = document.referrer.split('/')[2]; // Url domain only
+                var domainName = "";
+                var params = { "c": '', "e": '', "q": '' };
+
+                if (referrerUrl) {
+                    domainName = referrerUrl;
+                } else {
+                    if (customerId) {
+                        domainName = "https://" + customerId + ".queue-it.net/"
+                    } else {
+                        //console.log('There is no referre and customerId');
+                        params.c = null
+                    }
+                }
+
+                if (customerId) { // this come form the curunt url
+                    params.c = customerId;
+                } else {
+                    //console.log('there is no customerId');
+                    params.c = null
+                }
+
+                if (eventId) { // this come form the curunt url
+                    params.e = eventId;
+                }
+
+                if (queueId) { // this come form the curunt url
+                    params.q = queueId;
+                }
+
+                if (params.c && params.e && params.q) {
+                    var queryString = '?' + $.param(params);
+                    url = domainName + queryString;
+                    $('#back-to-queue').show();
+                    $('#back-to-queue a').attr('href', url);
+                } else {
+                    $('#back-to-queue').hide();
+                }
+            }
+
+            setLanguage = function () {
+                if (!data[language]) {
+                    language = "en-US";
+                }
+
+                $.each(data[language], function (key, value) { // iterate through all keys and give a value
+                    if (value != "") {
+                        $('[data-lang="' + key + '"]').text(value);
+                    } else {
+                        $('[data-lang="' + key + '"]').text("ssss"); // data["en-US"].value //fallback for any key on the language data - give it the english one
+                    }
+                });
+
+                // Set left to right
+                if (data[language].direction) {
+                    if (data[language].direction === "rtl") {
+                        $('html').attr('dir', 'rtl');
+                        $('.btn').css({ 'text-align': 'right' });
+                        $('body').css({ 'text-align': 'right' });
+                        $('.back-to-main').addClass('ml-auto');
+                        $('.lang-switch').removeClass('ml-auto');
+                    } else {
+                        $('html').attr('dir', 'ltr');
+                        $('.btn').css({ 'text-align': 'left' });
+                        $('body').css({ 'text-align': 'left' });
+                        $('.back-to-main').removeClass('ml-auto');
+                        $('.lang-switch').addClass('ml-auto');
+                    }
+                }
+                // set video lang data attributes
+                // if (data[language].caption) {
+                //     $('.start-video').attr('data-vcaption',"&cc_load_policy=1&cc_lang_pref=" + data[language].caption)
+                // }
+                // If the language does not have video
+                if (data[language].video) {
+                    $('.start-video').attr('data-src', data[language].video)
+                } else {
+                    $('.start-video').attr('data-src', data["en-US"].video)
+                }
+            }
+
+            setLanguage();
+
+            $.each(data, function (key, value) { // Build languages buttons on the language list
+                $('.lang-buttons').append('<div class="col col-md-3"><button class="btn lang-btn" data-lang="' + key + '">' + value.LangButtonText + '</button></div>');
+            });
+
+            $(document).on('click', '.lang-btn', function () { // When language get choosen action
+                language = $(this).attr('data-lang');
+                setLanguage();
+                $(".lang-switch").trigger("click");
+            });
+
+            $(document).on('click', '.lang-switch', function () { // show hide languages list
+                $('.lang-buttons').toggleClass('lang-buttons-hidden');
+                $('.lang-switch').toggleClass('lang-switch-icon-close');
+            });
+
+            $(document).on('click', '#open-more', function () { // Show more details btn - show hide page one page two
+                $('#main-page-one').toggle();
+                $('#main-page-two').toggle();
+                $('.lang-switch').toggleClass('text-green');
+                $('.back-to-main').toggle();
+
+            });
+            $(document).on('click', '.back-to-main', function () { // Go back btn - show hide page one page two
+                $('#main-page-one').toggle();
+                $('#main-page-two').toggle();
+                $('.lang-switch').toggleClass('text-green');
+                $('.back-to-main').toggle();
+            });
+
+            // Open video on modal
+            var videoSrc = '';
+            var videoAltText = '';
+            var captionString = '';
+            $('.start-video').click(function () {
+                videoSrc = data[language].video;
+                captionString = data[language].caption;
+                videoAltText = $(this).data("videoalttext");
+            });
+
+            // when the modal is opened autoplay it
+            $('#video-modal').on('shown.bs.modal', function () {            
+                $("#video-container").append('<iframe id="video" class="embed-responsive-item" src="https://player.vimeo.com/video/' + videoSrc + '?texttrack=' + captionString + '&h=2418c9e460&color=15BD80&title=0&byline=0&portrait=0&autoplay=1" alt="' + videoAltText + '" frameborder="0"  allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>');
+            });
+
+            $('#video-modal').on('hidden.bs.modal', function () {
+                $("#video-container").empty();
+                videoSrc = '';
+                videoAltText = '';
+                captionString = '';
+            });
+            // End Open video on modal ///////////
+
+            // to be check with Pavle
+            if (customerId) {
+                var supportInfoUrl = cdn + customerId + "/public/support.json";
+            }
+
+            $('#companyurl').html(hostUrl);
+            $('#zendeskLink').attr("href", zendeskUrl);
+            var creole = new Parse.Simple.Creole({
+                forIE: document.all
+            });
+            $.getJSON(supportInfoUrl, function (data) {
+
+                var customerInfo = "";
+                var supportInfo = "";
+                var supportinfotext = "";
+                $.each(data, function (key, val) {
+                    if (!val)
+                        return;
+
+                    if (key === "CompanyName")
+                        customerInfo = val;
+                    else if (key === "SupportEmail" && val)
+                        supportInfo += "<a href='mailto:" + val + "'>" + val + "</a><br />";
+                    else if (key === "SupportLink" && val)
+                        supportInfo += "<a href='" + val + "'>" + val + "</a><br />";
+                    else if (key === "SupportFacebook" && val)
+                        supportInfo += "Facebook:" + "<a href='https://facebook.com/" + val + "'>" + val + "</a><br />";
+                    else if (key === "SupportTwitter" && val)
+                        supportInfo += "Twitter:" + "<a href='https://twitter.com/" + val + "'>" + val + "</a><br />";
+                    else if (key === "SupportPhone" && val)
+                        supportInfo += "Phone: " + val + "<br />";
+
+                    if (key === "SupportInformation") {
+
+                        //supportinfotext = val;
+                        creole.parse(document.getElementById("supportinfotext"), val);
+                    }
+                });
+
+                if (!supportInfo && !supportinfotext) {
+                    $("#support-section").hide();
+                }
+
+                $("#companyNamePlaceholder").text(customerInfo);
+                $("#supportdetails").html(supportInfo);
+            })
+                .fail(function () {
+                    $("#support-section").hide();
+                    $("#supportDiv").hide(); // Hide problem with website section
+                    $("#supportdetails").show(); // Show problem with queue section
+                });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <div class="container">
+            <span class="navbar-brand">
+                <!--<img class="d-block" src="https://queue-it.com/media/xdnntudx/logo.png" alt="Queue-it logo">-->
+                <picture>
+                    <source srcset="https://queue-it.com/media/ioojrhfs/logo-white.png" media="(prefers-color-scheme: dark)">
+                    <img class="d-block" src="https://queue-it.com/media/xdnntudx/logo.png" alt="Queue-it logo">
+                </picture>
+            </span>
+            <div id="back-to-queue">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="btn btn-red ml-lg-2 mr-0 my-0 my-lg-0" href="#" tabindex="0" target="_blank" data-lang="BacktoQueueButton">Back to queue</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="umb-grid container text-white lang-selectores-container">
+        <div class="row lang-buttons lang-buttons-hidden bg-white my-3 py-3"></div>
+        <div class="position-absolute w-100">
+            <div class="d-flex">
+                <div class="btn back-to-main text-green pl-0"><strong data-lang="Back">Back</strong></div>
+                <div class="lang-switch-icon-open lang-switch" data-lang="LangButtonText">English (US)</div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="container back-to-main-container">
+            <div class="row">
+                <div class="col">
+                    <div class="btn back-to-main text-green pl-0"><strong data-lang="Back">Back</strong></div>
+                </div>
+            </div>
+        </div>
+    -->
+    <main id="main-page-one">
+        <div class="container-fluid umb-grid mt-0">
+            <div class="row bg-color-beige row-height-large  text-white">
+                <div class="col-12 col-lg-6 c1 cc  justify-content-center">
+                    <div class="row  justify-content-center">
+                        <div class="col-10 col-md-10 col-lg-8 padding-top-150">
+                            <div class="control-container qheading">
+                                <h2 data-lang="UserTitle">Want to understand why you're in a queue?</h2>
+                                <a class="anchor" id="say-goodbye-to-online-crashes"></a>
+                            </div>
+                            <div class="control-container qheading">
+                                <ul class="wit-ul">
+                                    <li>
+                                        <span class="listspan"><span>&#10003 </span><span data-lang="UserBullet1">Why am I waiting?</span></span>
+                                    </li>
+                                    <li>
+                                        <span class="listspan"><span>&#10003 </span><span data-lang="UserBullet2">Can I lose my place in line?</span></span>
+                                    </li>
+                                    <li>
+                                        <span class="listspan"><span>&#10003 </span><span data-lang="UserBullet3">What happens when it's my turn?</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="control-container qbutton">
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-white" href="whatisthis-second.html" ping="" id="open-more" data-lang="UserButton">Tell me more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 c2 cc  justify-content-center">
+                    <div class="row  justify-content-center">
+                        <div class="col-10 col-md-10 col-lg-8 padding-top-150">
+                            <div class="control-container qheading">
+                                <h2 data-lang="BusinessTitle">Want to use Queue-it for your business?</h2>
+                                <a class="anchor" id="say-goodbye-to-online-crashes"></a>
+                            </div>
+
+                            <div class="control-container qheading">
+                                <ul class="wit-ul">
+                                    <li>
+                                        <span class="listspan"><span>&#10003 </span><span data-lang="BusinessBullet1">How does an online queue work?</span></span>
+                                    </li>
+                                    <li>
+                                        <span class="listspan"><span>&#10003 </span><span data-lang="BusinessBullet2">What are the business benefits?</span></span>
+                                    </li>
+                                    <li>
+                                        <span class="listspan"><span>&#10003 </span><span data-lang="BusinessBullet3">How do businesses use it?</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="control-container qbutton">
+                                <div class="button-container">
+                                    <a class="btn btn-white" href="https://queue-it.com/?utm_source=whatisthis&utm_medium=exploreqi" ping="" target="_blank" rel="noopener" data-lang="BusinessButton">Explore Queue-it</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main id="main-page-two">
+        <div class="umb-grid mt-0 main-page-two-color">
+            <div class="grid-section">
+                <div class="row-container bg-color-beige row-height-large wit-second-page">
+                    <div class="container" itemprop="article" itemscope="" itemtype="http://schema.org/Article">
+                        <div class="row clearfix">
+                            <div class="area-container col-12 col-lg-4 my-4 d-flex">
+                                <div class="align-self-center">
+                                    <div class="control-container">
+                                        <h1 itemprop="name" data-lang="WhatisThisTitle">Why am I here and what do I do now?</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="area-container col-12 col-lg-8 my-3 d-flex">
+                                <div class="align-self-center">
+                                    <div class="control-container">
+                                        <figure class="start-video" data-toggle="modal" data-target="#video-modal" data-src="O6fo0biAc64" data-lang-video-lind="" data-videoalttext="How does Queue-it's virtual waiting room work">
+                                            <img src="https://queue-it.com/media/r32bmskh/image-for-video.png" alt="How does Queue-it's virtual waiting room work" itemprop="image">
+                                            <svg class="video-overlay-play-button" viewBox="0 0 100 100" alt="Play video">
+                                                <circle cx="50%" cy="50%" r="16" fill="#0d5f41"></circle>
+                                                <polygon points="46,42 46,58 58,50" fill="#ffffff"></polygon>
+                                            </svg>
+                                        </figure>
+                                        <meta itemprop="description" content="Queue-it is a virtual waiting room system, designed to prevent website and app failures during user peaks.">
+                                        <meta itemprop="uploadDate" content="2012-09-17">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5" id="support-section">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <p>Support Info</p>
+                    <p id="supportinfotext"></p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <br>
+                    <div>
+                        <div class="">
+                            <span id="supportdetails"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container umb-grid">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-8 my-5 bg-white px-3 px-md-5 py-2" id="accordion">
+                    <div class="border-bottom pb-1">
+                        <button class="btn btn-block mt-2 px-0 d-block collapsed" id="headingOne"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                            <span class="listspan"><strong data-lang="Question1">Why am I waiting?</strong></span>
+                        </button>
+                        <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="">
+                                <p class="mb-1" data-lang="Answer1">You are waiting because:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-bottom pb-1">
+                        <button class="btn btn-block mt-2 px-0 d-block collapsed" id="headingTwo"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                                aria-controls="collapseTwo">
+                            <span class="listspan"><strong data-lang="Question2">Can I lose my place in line?</strong></span>
+                        </button>
+                        <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="">
+                                <p class="mb-1" data-lang="Answer2">No, not unless you click the link to "Leave the line". You keep your place in line even if your phone goes to sleep or you close the queue page. When you go back to the queue page you will see updated progress.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-bottom pb-1">
+                        <button class="btn btn-block mt-2 px-0 d-block collapsed" id="heading4"
+                                data-toggle="collapse" data-target="#collapse4" aria-expanded="true"
+                                aria-controls="collapse4">
+                            <span class="listspan"><strong data-lang="Question3">Some other information!</strong></span>
+                        </button>
+                        <div class="collapse" id="collapse4" aria-labelledby="heading4" data-parent="#accordion">
+                            <div class="">
+                                <p class="mb-1" data-lang="Answer3">No, not unless you click the link to "Leave the line". You keep your place in line even if your phone goes to sleep or you close the queue page. When you go back to the queue page you will see updated progress.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pb-1">
+                        <button class="btn btn-block mt-2 px-0 d-block collapsed" id="heading3"
+                                data-toggle="collapse" data-target="#collapse3" aria-expanded="true"
+                                aria-controls="collapse3">
+                            <span class="listspan"><strong data-lang="Question4">Waht happen when it's my turn?</strong></span>
+                        </button>
+                        <div class="collapse" id="collapse3" aria-labelledby="heading3"
+                             data-parent="#accordion">
+                            <div class="">
+                                <p class="mb-1" data-lang="Answer4">What happens when it's my turn?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row justify-content-md-center my-5 pb-5">
+                <div class="col-12 text-center">
+                    <div id="technical-support" class="cookies-enabled">
+                        <span class="">
+                            <span id="support-disabled">Please accept cookies (click OK on the black bar) to access </span><a class="support-link" id="zendeskLink" href="https://support.queue-it.com/hc/" rel="noopener">Technical queue page support</a><span> (Only in English)</span>
+                        </span>
+                        <br>
+                        <span class="">
+                            <a href="/cookie-statement-user/">Cookie statement&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            <a href="/privacy-policy-user/">Privacy policy</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="video-modal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div id="video-container" class="embed-responsive embed-responsive-16by9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
